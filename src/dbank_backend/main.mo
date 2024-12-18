@@ -19,7 +19,7 @@ actor DBank {
 
   // Allow users to withdraw an amount from the currentValue
   // Decrease the cuttentValue by the amount
-  public func deduct(amount: Nat) {
+  public func withdraw(amount: Nat) {
     currentValue -= amount;
     Debug.print(debug_show(currentValue));
   }
