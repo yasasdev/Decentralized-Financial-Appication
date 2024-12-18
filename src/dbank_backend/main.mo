@@ -3,7 +3,7 @@ import Debug "mo:base/Debug"; // Importing the Debug module (To print the output
 // Creating the class (Canister)
 actor DBank {
   //Creating a mutable variable
-  var currentValue = 300;
+  var currentValue: Nat = 300;
 
   //Updating the value of a mutable variable
   currentValue := 500;
@@ -20,7 +20,12 @@ actor DBank {
   // Allow users to withdraw an amount from the currentValue
   // Decrease the cuttentValue by the amount
   public func withdraw(amount: Nat) {
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue));
+    let tempValue: Int = currentValue - amount;
+    if (tempValue >= 0) {
+      currentValue -= amount;
+      Debug.print(debug_show(currentValue));
+    } else {
+      Debug.print("Insufficient funds");
+    }    
   }
 }
