@@ -8,12 +8,19 @@ actor DBank {
   //Updating the value of a mutable variable
   currentValue := 500;
 
-  // Creating immutable variable
-  // let id = 1258545;
-
-  // Printing string value in the console
-  // Debug.print("Hello"); 
-
   // Printing the numeric values in the console
   Debug.print(debug_show(currentValue)); 
+
+  // Private function
+  public func topUp(amount: Nat) { // Nat is a data type for numeric values (Nat - Natural numbers)
+    currentValue += amount;
+    Debug.print(debug_show(currentValue));
+  };
+
+  // Allow users to withdraw an amount from the currentValue
+  // Decrease the cuttentValue by the amount
+  public func deduct(amount: Nat) {
+    currentValue -= amount;
+    Debug.print(debug_show(currentValue));
+  }
 }
