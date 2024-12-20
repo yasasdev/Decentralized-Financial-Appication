@@ -27,5 +27,9 @@ actor DBank {
     } else {
       Debug.print("Insufficient funds");
     }    
+  };
+
+  public query func checkBalance(): async Nat {
+    return currentValue;
   }
 }
