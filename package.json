@@ -14,5 +14,9 @@
   "type": "module",
   "workspaces": [
     "src/dbank_frontend"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/agent": "^2.2.0",
+    "@dfinity/candid": "^2.2.0"
+  }
 }
