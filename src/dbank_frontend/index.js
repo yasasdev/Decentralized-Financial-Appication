@@ -1,6 +1,7 @@
-import { dbank } from "../declarations/dbank";
+import { dbank_backend } from "../declarations/dbank_backend";
 
 window.addEventListener("load", async function() {
-    const currentAmount = await dbank.checkBalance();
-    document.getElementById("value").innerText = currentAmount;
+    // console.log("Frontend is loaded");
+    const currentAmount = await dbank_backend.checkBalance();
+    document.getElementById("value").innerText = currentAmount.toFixed(2);
 });
